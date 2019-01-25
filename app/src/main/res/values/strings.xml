@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Mortgage Calculator</string>
+    <string name="radiobutton">RadioButton</string>
+    <string name="Dollar">dollar</string>
+    <string name="Euro">euro</string>
+    <string name="Pound">pounf</string>
+    <string name="Apply">apply</string>
+    <string name="payment_frequency">Payment Frequency</string>
+    <string name="currency">Currency</string>
 </resources>
