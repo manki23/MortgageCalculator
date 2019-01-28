@@ -7,4 +7,43 @@
     <string name="Apply">apply</string>
     <string name="payment_frequency">Payment Frequency</string>
     <string name="currency">Currency</string>
+    <string name="homeLoantxt">Home Loan</string>
+    <string name="name">Name</string>
+    <string name="amountTxt">Enter amount</string>
+    <string name="typeOfInterest">Type of interest :</string>
+    <string name="forTxt">for</string>
+    <string name="calculate">Calculate</string>
+
+    <string-array name="interestRates">
+        <item>1.25%</item>
+        <item>1.75%</item>
+        <item>2%</item>
+        <item>2.5%</item>
+        <item>2.75%</item>
+        <item>3.25%</item>
+        <item>3.5%</item>
+        <item>4%</item>
+        <item>5%</item>
+        <item>6%</item>
+        <item>7%</item>
+    </string-array>
+
+    <string-array name="years">
+        <item>0.5 Years</item>
+        <item>1 Years</item>
+        <item>2 Years</item>
+        <item>3 Years</item>
+        <item>4 Years</item>
+        <item>5 Years</item>
+        <item>6 Years</item>
+        <item>7 Years</item>
+        <item>8 Years</item>
+        <item>9 Years</item>
+        <item>10 Years</item>
+        <item>11 Years</item>
+        <item>12 Years</item>
+        <item>13 Years</item>
+        <item>14 Years</item>
+        <item>15 Years</item>
+    </string-array>
 </resources>
