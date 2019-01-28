@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/greenBackground"
+    android:background="@drawable/setting_background_04"
     tools:context=".WelcomePageActivity">
 
 
@@ -25,7 +25,8 @@
             android:padding="10dp"
             android:text="@string/homeLoantxt"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/name"
@@ -61,7 +62,8 @@
             android:layout_marginBottom="10dp"
             android:text="@string/typeOfInterest"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:id="@+id/linearLayout2"
@@ -100,8 +102,11 @@
             android:layout_marginLeft="80dp"
             android:layout_marginTop="40dp"
             android:layout_marginRight="80dp"
+            android:background="@drawable/round_corner_button"
             android:text="@string/calculate"
             android:textSize="18sp" />
+
+
 
     </LinearLayout>
 </RelativeLayout>
