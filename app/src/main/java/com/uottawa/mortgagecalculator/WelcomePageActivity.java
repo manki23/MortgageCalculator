@@ -43,21 +43,18 @@ public class WelcomePageActivity extends AppCompatActivity  {
         rateET = (EditText) findViewById(R.id.rate_id);
         yearsET = (EditText) findViewById(R.id.years_id);
 
-        username = nameET.getText().toString();
-        nameET.setText(username);
-//        amount = Double.parseDouble(amountET.getText().toString());
-  //      interest = Double.parseDouble(rateET.getText().toString());
-    //    nb_years = Integer.parseInt(yearsET.getText().toString());
-
-
-
-
-
     }
 
 
 
     public void calculBtn_onClick(View view) {
+
+        username = nameET.getText().toString();
+        nameET.setText(username);
+        amount = Double.parseDouble(amountET.getText().toString());
+        interest = Double.parseDouble(rateET.getText().toString()) / 100.00;
+        nb_years = Integer.parseInt(yearsET.getText().toString());
+
 
         Double M, P, r;
         int n;
