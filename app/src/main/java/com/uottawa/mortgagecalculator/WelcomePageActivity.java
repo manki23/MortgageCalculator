@@ -30,12 +30,28 @@ public class WelcomePageActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_page);
 
+        Intent intent = getIntent();
+
         if (savedInstanceState == null) {
             amount = 0.0;
             interest = 0.0;
             paymentmethod = 12;
             nb_years = 1;
             currency = '$';
+        }
+
+        if (intent != null){
+            if (intent.hasExtra("currency")) {
+                int c = intent.getIntExtra("currency", 0);
+                if (c == 2) currency = '€';
+                else if (c == 3) currency = '£';
+            }
+
+            if (intent.hasExtra("paymentFrequency")) {
+                int c = intent.getIntExtra("paymentFrequency", 0);
+                if (c == 1) paymentmethod = 24;
+                else if (c == 2) paymentmethod = 52;
+            }
         }
 
         nameET = (EditText) findViewById(R.id.name_id);

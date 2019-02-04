@@ -16,7 +16,7 @@ public class activity_setting_page extends AppCompatActivity {
     int     currency;
 
     /* paymentFrequency :
-                    1 = Bi-Weekly
+                    1 = Bi-Monthly
                     2 = Weekly
                     3 = Monthly
      */
