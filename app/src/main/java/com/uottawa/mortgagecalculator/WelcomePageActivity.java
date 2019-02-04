@@ -70,8 +70,9 @@ public class WelcomePageActivity extends AppCompatActivity  {
 
 
         M = P * (r * Math.pow((1 + r), n)) / (Math.pow(1 + r, n) - 1);
+        Double result = (double) Math.round(M * 100) / 100;
         Intent gotoSummary = new Intent(WelcomePageActivity.this, SummaryPageActivity.class);
-        gotoSummary.putExtra("text", username + " should make " + paymentmethodstring + " payments of " + currency + M);
+        gotoSummary.putExtra("text", username + " should make " + paymentmethodstring + " payments of " + currency + result);
 
         startActivity(gotoSummary);
     }
