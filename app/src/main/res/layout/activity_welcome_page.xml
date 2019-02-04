@@ -73,6 +73,7 @@
 
             <Spinner
                 android:id="@+id/interestSpinner"
+                android:autofillHints="%"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
@@ -88,6 +89,7 @@
 
             <Spinner
                 android:id="@+id/yearSpinner"
+                android:autofillHints="Years"
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="30dp"

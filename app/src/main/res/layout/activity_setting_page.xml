@@ -10,7 +10,7 @@
     tools:context=".activity_setting_page">
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/settingKeyImageView"
         android:layout_width="131dp"
         android:layout_height="131dp"
         android:layout_marginStart="136dp"
@@ -19,12 +19,12 @@
         android:layout_marginEnd="144dp"
         android:layout_marginRight="144dp"
         android:layout_marginBottom="528dp"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        fbutton:srcCompat="@android:drawable/ic_menu_manage"
-        android:contentDescription="TODO" />
+        fbutton:srcCompat="@android:drawable/ic_menu_manage" />
 
     <EditText
         android:id="@+id/currency_title"
@@ -47,7 +47,7 @@
         android:inputType="" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/dollarImageView2"
         android:layout_width="87dp"
         android:layout_height="87dp"
         android:layout_marginStart="70dp"
@@ -66,7 +66,7 @@
         app:srcCompat="@mipmap/dollar_layer" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/euroImageView8"
         android:layout_width="87dp"
         android:layout_height="87dp"
         android:layout_marginStart="87dp"
@@ -77,15 +77,15 @@
         android:layout_marginBottom="353dp"
         android:contentDescription="@string/Euro"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="@+id/poundImageView"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/dollarImageView2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@mipmap/ic_launcher_foreground" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/poundImageView"
         android:layout_width="87dp"
         android:layout_height="87dp"
         android:layout_marginStart="247dp"
@@ -104,7 +104,8 @@
         app:srcCompat="@mipmap/pound_layer" />
 
     <RadioButton
-        android:id="@+id/radioButton2"
+        android:id="@+id/dollarRadioBtn"
+        android:onClick="dollarRadioBtn_onClick"
         android:layout_width="81dp"
         android:layout_height="28dp"
         android:layout_marginStart="70dp"
@@ -113,6 +114,7 @@
         android:layout_marginEnd="272dp"
         android:layout_marginRight="272dp"
         android:layout_marginBottom="332dp"
+        android:clickable="true"
         android:text="Dollar"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -124,7 +126,8 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <RadioButton
-        android:id="@+id/radioButton3"
+        android:id="@+id/poundRadioBtn"
+        android:onClick="poundRadioBtn_onClick"
         android:layout_width="91dp"
         android:layout_height="33dp"
         android:layout_marginStart="269dp"
@@ -133,6 +136,7 @@
         android:layout_marginEnd="69dp"
         android:layout_marginRight="69dp"
         android:layout_marginBottom="332dp"
+        android:clickable="true"
         android:text="Pound"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -144,7 +148,8 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <RadioButton
-        android:id="@+id/radioButton4"
+        android:id="@+id/euroRadioBtn"
+        android:onClick="euroRadioBtn_onClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="172dp"
@@ -164,7 +169,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/paymentFrequencyEditTxt"
         android:layout_width="291dp"
         android:layout_height="61dp"
         android:layout_marginStart="124dp"
@@ -188,12 +193,14 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <RadioButton
-        android:id="@+id/radioButton5"
+        android:id="@+id/biWeeklyRadioBtn"
+        android:onClick="biWeeklyRadioBtn_onClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
         android:layout_marginTop="472dp"
+        android:clickable="true"
         android:text="Bi-Weekly"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -201,7 +208,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioButton
-        android:id="@+id/radioButton6"
+        android:id="@+id/weeklyRadioBtn"
+        android:onClick="weeklyRadioBtn_onClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="172dp"
@@ -209,21 +217,24 @@
         android:layout_marginTop="472dp"
         android:layout_marginEnd="178dp"
         android:layout_marginRight="178dp"
+        android:clickable="true"
         android:text="Weekly"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/radioButton7"
+        app:layout_constraintEnd_toStartOf="@+id/monthlyRadioBtn"
         app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toEndOf="@+id/radioButton5"
+        app:layout_constraintStart_toEndOf="@+id/biWeeklyRadioBtn"
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioButton
-        android:id="@+id/radioButton7"
+        android:id="@+id/monthlyRadioBtn"
+        android:onClick="monthlyRadioBtn_onClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="472dp"
         android:layout_marginEnd="48dp"
         android:layout_marginRight="48dp"
+        android:clickable="true"
         android:text="Monthly"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -231,7 +242,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/saveBtn"
+        android:onClick="saveOnClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="162dp"
