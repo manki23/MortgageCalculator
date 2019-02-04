@@ -10,48 +10,72 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class WelcomePageActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class WelcomePageActivity extends AppCompatActivity  {
 
-    private EditText name;
-    private EditText amount;
+    private EditText nameET;
+    private EditText amountET;
+    private EditText rateET;
+    private EditText yearsET;
+
+    private Double interest;
+    private Double amount;
+    private int nb_years;
+    private String username;
+    private int paymentmethod;
+    private char currency;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_page);
 
-        name = (EditText) findViewById(R.id.name);
-        amount = (EditText) findViewById(R.id.amount);
+        if (savedInstanceState == null) {
+            amount = 0.0;
+            interest = 0.0;
+            paymentmethod = 12;
+            nb_years = 1;
+            currency = '$';
+        }
 
-        Spinner spinner = findViewById(R.id.interestSpinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.interestRates, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+        nameET = (EditText) findViewById(R.id.name_id);
+        amountET = (EditText) findViewById(R.id.amount_id);
+        rateET = (EditText) findViewById(R.id.rate_id);
+        yearsET = (EditText) findViewById(R.id.years_id);
 
-        Spinner spinner2 = findViewById(R.id.yearSpinner);
-        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.years, android.R.layout.simple_spinner_item);
-        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner2.setAdapter(adapter2);
-        spinner2.setOnItemSelectedListener(this);
+        username = nameET.getText().toString();
+        nameET.setText(username);
+//        amount = Double.parseDouble(amountET.getText().toString());
+  //      interest = Double.parseDouble(rateET.getText().toString());
+    //    nb_years = Integer.parseInt(yearsET.getText().toString());
 
-    }
 
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        String text = adapterView.getItemAtPosition(i).toString();
-        Toast.makeText(adapterView.getContext(), text, Toast.LENGTH_SHORT).show();
-    }
 
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
+
 
     }
+
+
 
     public void calculBtn_onClick(View view) {
+
+        Double M, P, r;
+        int n;
+        String paymentmethodstring;
+
+        if (paymentmethod == 12) paymentmethodstring = "monthly";
+        else if (paymentmethod == 52) paymentmethodstring = "weekly";
+        else paymentmethodstring = "Bi-Monthly";
+
+        P = amount;
+        r = interest / paymentmethod;
+        n = paymentmethod * nb_years;
+
+
+        M = P * (r * Math.pow((1 + r), n)) / (Math.pow(1 + r, n) - 1);
         Intent gotoSummary = new Intent(WelcomePageActivity.this, SummaryPageActivity.class);
-        //gotoSummary.putExtra()
-        gotoSummary.putExtra("Name", (CharSequence) name);
+        gotoSummary.putExtra("text", username + " should make " + paymentmethodstring + " payments of " + currency + M);
+
         startActivity(gotoSummary);
     }
 

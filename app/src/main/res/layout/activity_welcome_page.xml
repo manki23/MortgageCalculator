@@ -53,7 +53,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/name"
+            android:id="@+id/name_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
@@ -61,11 +61,11 @@
             android:layout_marginRight="50dp"
             android:layout_marginBottom="20dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/name" />
+            android:hint="@string/name"
+            android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/amount"
+            android:id="@+id/amount_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
@@ -73,8 +73,8 @@
             android:layout_marginRight="50dp"
             android:layout_marginBottom="20dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/amountTxt" />
+            android:hint="@string/amountTxt"
+            android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/interestTextView"
@@ -95,29 +95,40 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Spinner
-                android:id="@+id/interestSpinner"
-                android:autofillHints="%"
-                android:layout_width="100dp"
+            <EditText
+                android:id="@+id/rate_id"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName" />
 
             <TextView
                 android:id="@+id/forTxtView"
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/forTxt"
+                android:text="% for "
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp" />
 
-            <Spinner
-                android:id="@+id/yearSpinner"
-                android:autofillHints="Years"
-                android:layout_width="110dp"
+            <EditText
+                android:id="@+id/years_id"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="30dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/yearsTxtVw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/years"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp" />
+
         </LinearLayout>
 
         <Button

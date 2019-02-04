@@ -11,10 +11,12 @@ public class SummaryPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_summary_page);
 
-        String username = getIntent().getExtras().getString("name");
 
-        TextView name1 = (TextView) findViewById(R.id.textViewName1);
-        name1.setText(username);
+        String text = getIntent().getExtras().getString("text");
+
+
+        TextView display = (TextView) findViewById(R.id.summaryTextView);
+        display.setText(text);
 
     }
 

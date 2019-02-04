@@ -201,7 +201,7 @@
         android:layout_marginTop="472dp"
         android:clickable="true"
         android:onClick="biWeeklyRadioBtn_onClick"
-        android:text="Bi-Weekly"
+        android:text="Bi-Monthly"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
