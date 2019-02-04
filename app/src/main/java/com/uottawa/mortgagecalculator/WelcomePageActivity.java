@@ -46,4 +46,14 @@ public class WelcomePageActivity extends AppCompatActivity implements AdapterVie
         //gotoSummary.putExtra()
         startActivity(gotoSummary);
     }
+
+    public void detailsOnClick(View view) {
+        Intent gotoDetails = new Intent(WelcomePageActivity.this, activity_details_page.class);
+        startActivity(gotoDetails);
+    }
+
+    public void settingsOnClick(View view) {
+        Intent gotoSettings = new Intent(WelcomePageActivity.this, activity_setting_page.class);
+        startActivity(gotoSettings);
+    }
 }

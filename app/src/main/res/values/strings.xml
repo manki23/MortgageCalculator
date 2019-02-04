@@ -13,6 +13,8 @@
     <string name="typeOfInterest">Type of interest :</string>
     <string name="forTxt">for</string>
     <string name="calculate">Calculate</string>
+    <string name="settings">Settings</string>
+    <string name="details">Details</string>
 
     <string-array name="interestRates">
         <item>1.25%</item>
