@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_info_details" />
 
-    <EditText
+    <TextView
         android:id="@+id/editText4"
         android:layout_width="350dp"
         android:layout_height="60dp"
@@ -70,6 +70,7 @@
         android:layout_marginRight="161dp"
         android:layout_marginBottom="100dp"
         android:background="@drawable/round_corner_button"
+        android:onClick="backOnClick"
         android:padding="10dp"
         android:text="Back to Home"
         app:layout_constraintBottom_toBottomOf="parent"

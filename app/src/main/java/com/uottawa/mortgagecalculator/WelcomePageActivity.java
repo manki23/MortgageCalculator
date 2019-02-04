@@ -6,15 +6,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 public class WelcomePageActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    private EditText name;
+    private EditText amount;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_page);
+
+        name = (EditText) findViewById(R.id.name);
+        amount = (EditText) findViewById(R.id.amount);
 
         Spinner spinner = findViewById(R.id.interestSpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.interestRates, android.R.layout.simple_spinner_item);
@@ -44,6 +51,7 @@ public class WelcomePageActivity extends AppCompatActivity implements AdapterVie
     public void calculBtn_onClick(View view) {
         Intent gotoSummary = new Intent(WelcomePageActivity.this, SummaryPageActivity.class);
         //gotoSummary.putExtra()
+        gotoSummary.putExtra("Name", (CharSequence) name);
         startActivity(gotoSummary);
     }
 
